@@ -13,7 +13,7 @@ RUN apk add --no-cache trac && \
 
 VOLUME "$TRACHOME"
 
-EXPOSE 80
+EXPOSE 80/tcp
 
 WORKDIR "$TRACHOME"
 
