@@ -21,6 +21,6 @@ RUN rpm -ivh /tmp/ss5-3.8.9-8.x86_64.rpm && \
 
 ENTRYPOINT ["entrypoint.sh"]
 
-EXPOSE 1080
+EXPOSE 1080/tcp
 
 CMD ["tail", "-f", "/var/log/ss5/ss5.log"]
