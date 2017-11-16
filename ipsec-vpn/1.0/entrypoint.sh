@@ -17,6 +17,8 @@
 # Attribution required: please include my name in any derivative and let me
 # know how you have improved it!
 
+set -x
+
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 exiterr()  { echo "Error: $1" >&2; exit 1; }
@@ -281,11 +283,14 @@ EOF
 
 # Load IPsec NETKEY kernel module
 modprobe af_key
-service rsyslog restart
 
 # Start services
 mkdir -p /var/run/pluto /var/run/xl2tpd
 rm -f /var/run/pluto/pluto.pid /var/run/xl2tpd.pid
 
-ipsec start --config /etc/ipsec.conf
-exec xl2tpd -D -c /etc/xl2tpd/xl2tpd.conf
+#ipsec start --config /etc/ipsec.conf
+#xl2tpd -c /etc/xl2tpd/xl2tpd.conf
+systemctl enable ipsec
+systemctl enable xl2tpd
+
+/usr/sbin/init
