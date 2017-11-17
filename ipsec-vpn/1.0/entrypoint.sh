@@ -293,4 +293,4 @@ rm -f /var/run/pluto/pluto.pid /var/run/xl2tpd.pid
 systemctl enable ipsec
 systemctl enable xl2tpd
 
-/usr/sbin/init
+exec /usr/sbin/init
