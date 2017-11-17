@@ -38,5 +38,5 @@ Supported tags:`1.0`, `latest`.
 Example:
 
 ```
-docker run --name ipsec -d --privileged -v /lib/modules:/lib/modules:ro -p 4500:4500/udp -p 500:500/udp --restart=always --env-file ./vpn.env anyshpm/ipsec-vpn
+docker run --name ipsec -d --privileged -v /lib/modules:/lib/modules:ro -p 4500:4500/udp -p 500:500/udp --restart=always --env-file ./vpn.env anyshpm/ipsec-vpn:1.0
 ```

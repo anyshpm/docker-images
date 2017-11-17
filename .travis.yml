@@ -13,10 +13,10 @@ script:
   - image="anyshpm/socks5:3.8.9"
   - docker build -t "$image" .
   - ~/official-images/test/run.sh "$image"
-  #- cd ../../ipsec-vpn/1.0
-  #- image="anyshpm/ipsec-vpn:1.0"
-  #- docker build -t "$image" .
-  #- ~/official-images/test/run.sh "$image"
+  - cd ../../ipsec-vpn/1.0
+  - image="anyshpm/ipsec-vpn:1.0"
+  - docker build -t "$image" .
+  #- ~/official-images/test/run.sh --privileged "$image"
 
 after_script:
   - docker images
